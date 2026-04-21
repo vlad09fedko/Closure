@@ -19,9 +19,8 @@ console.log('~~~~~ Second task ~~~~~');
 function createLimiter(limit) {
   let count = 0;
   return function () {
-    if (limit < 0) return 'Error!';
     if (typeof limit !== 'number' || Number.isNaN(limit)) return 'Type error';
-    if (count === limit) return 'Error';
+    if (count >= limit) return 'Error';
     count++;
     return 'Ok';
   };
